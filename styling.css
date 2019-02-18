@@ -24,6 +24,10 @@ body {
   margin: 0;
 }
 
+.subtitle {
+  color: #ee5e07;
+}
+
 .nav ul {
   display: flex;
   justify-content: space-evenly;
