@@ -114,15 +114,15 @@ body {
   }
 }
 
-.flickerIn {
-  animation-name: flickerIn;
-  animation-duration: 1s;
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
 
-@keyframes flickerIn {
+@keyframes fadeIn {
   from {
     opacity: 0
   }
