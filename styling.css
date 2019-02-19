@@ -11,12 +11,11 @@ body {
   margin: 0 11%;
 }
 
-.index .heading {
-  margin: 11% 0;
-}
-
-.portfolio .heading {
-  margin: 5.5% 0;
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: calc(100vh - 31px);
 }
 
 .heading h1 {
@@ -57,10 +56,10 @@ body {
 
 @media screen and (max-width: 750px) {
   .heading h1 {
-    font-size: 26px;
+    font-size: 36px;
   }
   .heading p {
-    font-size: 13px;
+    font-size: 22px;
   }
 }
 
@@ -72,7 +71,7 @@ body {
 
 .copy {
   border-left: 3px solid #ee5e07;
-  padding: 0.5% 1%;
+  padding-left: 11px;
   overflow: hidden;
 }
 
@@ -83,12 +82,12 @@ body {
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   animation-delay: 1.2s;
-  transform: translate(-100%);
+  transform: translate(-104%);
 }
 
 @keyframes slideIn {
   from {
-    transform: translate(-100%);
+    transform: translate(-104%);
   }
   to {
     transform: translate(0);
