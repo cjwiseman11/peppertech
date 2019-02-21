@@ -18,6 +18,11 @@ body {
   height: calc(100vh - 31px);
 }
 
+.not-intro {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 .heading h1 {
   font-size: 4vw;
   margin: 0;
@@ -144,28 +149,35 @@ body {
 }
 
 
-
-
-
-
-
-
-
 /* Portfolio */
-
-.portfolio-items {
-  display: flex;
-}
 
 .portfolio-items .container {
   display: flex;
-  flex-direction: column;
-  margin: 0 22px;
-  align-items: baseline
+  align-items: center;
+}
+
+.portfolio-items .portfolio-image {
+  flex: 1;
+}
+
+.portfolio-items .portfolio-image img {
+  width: 100%;
 }
 
 .portfolio-items .portfolio-content {
-  flex-grow: 1;
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 0 30px;
+}
+
+.portfolio-items .portfolio-content h3 {
+  margin: 0.5em 0;
+}
+
+.portfolio-items .portfolio-content p {
+  margin: 0.5em 0;
 }
 
 .portfolio-items .button {
