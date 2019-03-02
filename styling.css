@@ -144,31 +144,27 @@ body {
 }
 
 
-
-
-
-
-
-
-
 /* Portfolio */
 
-.portfolio-items {
+.portfolio-item {
   display: flex;
+  align-items: center;
 }
 
-.portfolio-items .container {
+.portfolio-content {
+  width: 33.3%;
   display: flex;
   flex-direction: column;
-  margin: 0 22px;
-  align-items: baseline
+  padding: 20px;
+  border-left: 3px solid #ee5e07;
 }
 
-.portfolio-items .portfolio-content {
-  flex-grow: 1;
+.portfolio-item img {
+  width: 100%;
+  max-width: 600px;
 }
 
-.portfolio-items .button {
+.portfolio-item .button {
   border: 1px #ee5e07 solid;
   color: #fbf9ff;
   border-radius: 11px;
@@ -176,9 +172,10 @@ body {
   padding: 11px;
   text-align: center;
   text-decoration: none;
+  margin-top: 11px;
 }
 
-.portfolio-items .button:hover {
+.portfolio-item .button:hover {
   border: 1px #219ab9 solid;
   background: #060301;
   color: #fbf9ff;
