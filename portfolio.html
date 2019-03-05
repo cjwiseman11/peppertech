@@ -9,10 +9,13 @@
         background: #060301;
         color: #060301;
       }
+      img {
+        width: 0%;
+      }
     </style>
   </head>
   <body>
-    <div class="nav fadeIn">
+    <div class="nav">
       <ul class="content">
         <li><a href="index.html">Home</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -21,12 +24,10 @@
       </ul>
     </div>
     <div class="content not-intro">
-      <section class="heading fadeIn">
-        <h1>Peppertech <span class="subtitle">Portfolio by Chris Wiseman</span></h1>
-        <p>Fullstack JavaScript Web Development</p>
+      <section class="heading">
+        <h1>Peppertech <span class="subtitle">Portfolio</span></h1>
       </section>
       <section class="portfolio">
-        <h2>Portfolio</h2>
         <div class="portfolio-items">
           <div class="container">
             <div class="portfolio-image">
@@ -40,15 +41,13 @@
             </div>
           </div>
           <div class="container">
+            <div class="portfolio-image">
+              <img src="images/feedify.jpg" />
+            </div>
             <div class="portfolio-content">
               <h3>feedify.xyz</h3>
               <p>feedify.xyz was a second iteration of an RSS reader that was rebuilt using NodeJS Express server and Bootstrap front-end.</p>
               <p class="key-points">Key Points</p>
-              <ul>
-                <li>Automatically gather news every 15 minutes using CRON</li>
-                <li>Uses Smmry API to provide a short summary for each article</li>
-                <li>MySQL database</li>
-              </ul>
               <a href="https://ziki.fm" title="ZIKI.FM" class="button">Check it out</a>
             </div>
           </div>
