@@ -51,34 +51,6 @@ body {
   color: #ee5e07;
 }
 
-.nav {
-  height: 31px;
-}
-
-.nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  max-width: 350px;
-  margin: 0;
-  font-weight: 700;
-  padding: 11px 0 0 0;
-}
-
-.nav ul li {
-  display: inline-block;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  padding-left: 5px;
-  border-left: 2px #060301 solid;
-}
-
-.nav a:hover {
-  border-left: 2px #ee5e07 solid;
-}
-
 .copy {
   border-left: 3px solid #ee5e07;
   padding-left: 11px;
@@ -137,6 +109,74 @@ body {
   }
   to {
     opacity: 1
+  }
+}
+
+
+/* Nav */
+.nav {
+  position: fixed;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin: 7px 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding-left: 5px;
+  border-left: 2px #060301 solid;
+}
+
+.animation-container {
+  overflow: hidden;
+  padding-left: 5px;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  max-height: 1em;
+}
+
+li p {
+  visibility: hidden;
+}
+
+li i {
+  padding-right: 5px;
+}
+
+li:hover i {
+  border-right: 2px #ee5e07 solid;
+}
+
+li:hover p {
+  animation-name: fromLeft;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  visibility: visible;
+}
+
+@keyframes fromLeft {
+ from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0;
   }
 }
 
