@@ -7,15 +7,17 @@ body {
 }
 
 .content {
-  max-width: 1920px;
-  margin: 0 11%;
+  width: calc(100% - 240px);
+  max-width: 1400px;
+  margin: 0 auto;
+  
 }
 
 .intro {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: calc(100vh - 31px);
+  height: 100vh;
 }
 
 .heading h1 {
@@ -32,23 +34,42 @@ body {
   margin: 111px 0;
 }
 
-@media screen and (max-width: 750px) {
+.subtitle {
+  color: #ee5e07;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 980px) {
   .heading h1 {
-    font-size: 36px;
+    font-size: 40px;
   }
   .heading p {
     font-size: 22px;
   }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (max-width: 750px) {
   .heading h1 {
-    font-size: 80px;
+    font-size: 30px;
+  }
+  .heading p {
+    font-size: 22px;
+  }
+  .content {
+    width: calc(100% - 111px);
   }
 }
 
-.subtitle {
-  color: #ee5e07;
+@media screen and (max-width: 580px) {
+  .subtitle {
+    white-space: normal;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .heading h1 {
+    font-size: 75px;
+  }
 }
 
 .copy {
@@ -116,6 +137,8 @@ body {
 /* Nav */
 .nav {
   position: fixed;
+  width: 120px;
+  top: 0;
 }
 
 .nav ul {
