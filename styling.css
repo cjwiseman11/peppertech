@@ -56,13 +56,22 @@ body {
     font-size: 22px;
   }
   .content {
-    width: calc(100% - 111px);
+    width: calc(100% - 200px);
+  }
+  .animation-container {
+    font-size: 0.8em;
   }
 }
 
 @media screen and (max-width: 580px) {
   .subtitle {
     white-space: normal;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .content {
+    width: calc(100% - 111px);
   }
 }
 
@@ -152,7 +161,7 @@ body {
 
 .nav ul li {
   display: inline-block;
-  margin: 7px 0;
+  margin: 11px 0;
 }
 
 .nav a {
@@ -160,6 +169,7 @@ body {
   text-decoration: none;
   padding-left: 5px;
   border-left: 2px #060301 solid;
+  background: none;
 }
 
 .animation-container {
@@ -181,25 +191,28 @@ li i {
   padding-right: 5px;
 }
 
-li:hover i {
-  border-right: 2px #ee5e07 solid;
-}
+@media screen and (min-width: 431px) {
 
-li:hover p {
-  animation-name: fromLeft;
-  animation-duration: 0.5s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  visibility: visible;
-}
-
-@keyframes fromLeft {
- from {
-    margin-left: -100%;
+  li:hover i {
+    border-right: 2px #ee5e07 solid;
   }
-  to {
-    margin-left: 0;
+
+  li:hover p {
+    animation-name: fromLeft;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    visibility: visible;
+  }
+
+  @keyframes fromLeft {
+  from {
+      margin-left: -100%;
+    }
+    to {
+      margin-left: 0;
+    }
   }
 }
 
@@ -268,4 +281,14 @@ li:hover p {
 .not-intro .heading {
   border-left: 2px solid #ee5e07;
   padding-left: 11px;
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input + label {
+  margin-top: 22px;
 }
