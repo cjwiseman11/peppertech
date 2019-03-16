@@ -84,7 +84,6 @@ body {
 .copy {
   border-left: 3px solid #ee5e07;
   padding-left: 11px;
-  overflow: hidden;
 }
 
 .slideIn {
@@ -114,6 +113,7 @@ body {
   animation-fill-mode: forwards;
   animation-delay: 0.8s;
   transform: scaleY(0);
+  overflow: hidden;
 }
 
 @keyframes openEqually {
@@ -141,7 +141,6 @@ body {
     opacity: 1
   }
 }
-
 
 /* Nav */
 .nav {
@@ -230,6 +229,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  /* background: linear-gradient(-184deg, rgb(20, 57, 113) 0%, #06030100 11% ); */
 }
 
 nav ul {
@@ -295,7 +295,7 @@ nav li a {
   margin: 0.5em 0;
 }
 
-.portfolio-items .button {
+.button {
   border: 2px #ee5e07 solid;
   color: #fbf9ff;
   border-radius: 11px;
@@ -303,9 +303,10 @@ nav li a {
   padding: 11px;
   text-align: center;
   text-decoration: none;
+  margin: 11px 0;
 }
 
-.portfolio-items .button:hover {
+.button:hover {
   background: #ee5e07;
   color: #000;
 }
@@ -319,27 +320,34 @@ nav li a {
 form {
   display: flex;
   flex-direction: column;
+  width: 38vw;
+}
+
+form input, form textarea {
+  border: none;
+  margin-top: 1em;
+  padding: 11px;
+  border-radius: 0px 22px 0px 0;
+}
+
+form label {
+  border-left: 2px solid #ed5e07;
+  padding-left: 11px;
 }
 
 input + label {
   margin-top: 22px;
 }
 
-/* Bottom Nav */
-.bottom-nav {
-  position: fixed;
-  background: none;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.bottom-nav ul {
+.contact {
   display: flex;
-  list-style: none;
-  padding: 0;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.bottom-nav li + li {
-  margin-left: 11px;
+.bio {
+  max-width: 400px;
+  padding: 11px;
+  box-shadow: 5px 7px 175px 0px #5f07ee;
+  margin-left: 55px;
 }
