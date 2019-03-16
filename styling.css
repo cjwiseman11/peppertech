@@ -225,6 +225,29 @@ li i {
   margin-bottom: 10px;
 }
 
+/* <nav> nav */
+nav {
+  position: fixed;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  padding-left: 6px;
+}
+
+nav li+li {
+  margin-left: 11px;
+}
+
+nav li:hover {
+  border-left: 2px solid #ee5e07;
+  padding-left: 4px;
+}
+
 
 /* Portfolio */
 
@@ -291,4 +314,23 @@ form {
 
 input + label {
   margin-top: 22px;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed;
+  background: none;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.bottom-nav li + li {
+  margin-left: 11px;
 }
