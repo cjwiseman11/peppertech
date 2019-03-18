@@ -33,14 +33,14 @@
           <p>I'd love to hear from you, whether it's feedback, an enquiry on work or if you wanted to work with me.</p>
           <p>I will usually get back to you within a few hours.</p>
         </div>
-        <form>
+        <form action="submit.php" method="post">
           <label for="name">Name:</label>
-          <input type="text" name="name" placeholder="Your name" />
+          <input type="text" name="name" placeholder="Your name" required />
           <label for="email">Email:</label>
-          <input type="text" name="email" placeholder="Your email" />
+          <input type="text" name="email" placeholder="Your email" required />
           <label for="message">Message:</label>
-          <textarea name="message" rows="11" placeholder="Your message..."></textarea>
-          <a class="button" >Send</a>
+          <textarea name="message" rows="11" placeholder="Your message..." required></textarea>
+          <button type="submit" class="button">Send</button>
         </form>
       </section>
     </div>

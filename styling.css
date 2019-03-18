@@ -273,8 +273,19 @@ nav li a {
   flex-direction: column;
 }
 
-.portfolio-items .container + .container {
-  margin-top: 100px;
+@media screen and (min-width: 751px) {
+  .portfolio-items .container + .container {
+    margin-left: 111px;
+  }
+  .portfolio .portfolio-items {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .portfolio-items .container + .container {
+    margin-top: 111px;
+  }
 }
 
 .portfolio .container h3 {
@@ -289,7 +300,12 @@ nav li a {
   border-radius: 11px;
 }
 
+.portfolio p {
+  flex: 1;
+}
+
 .button {
+  background: none;
   display: block;
   border: 2px #ee5e07 solid;
   color: #fbf9ff;
@@ -300,6 +316,7 @@ nav li a {
   text-decoration: none;
   margin: 11px 0;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -333,20 +350,30 @@ form label {
 input + label {
   margin-top: 22px;
 }
+
 @media screen and (max-width: 750px) {
 
 }
 
 @media screen and (min-width: 751px) {
+  form {
+    width: 50%;
+    margin-right: 111px;
+  }
+
   .contact {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  .contact .purply {
+    width: 50%;
   }
 }
 
 .purply {
-  max-width: 400px;
   padding: 11px;
   box-shadow: 0 0 77px 0 #5f07ee;
   margin-bottom: 77px;
