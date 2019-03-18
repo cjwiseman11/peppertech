@@ -3,10 +3,10 @@
 		echo "An error occured. What are you up to?";
 		exit;
 	} else {
-		$to 	           = 'chris@peppertech.co.uk'; 
-		$name	  		   = $_POST['name'];
-		$email             = $_POST['email'];
-		$message           = $_POST['message'];	
+		$to = 'chris@peppertech.co.uk'; 
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$message = $_POST['message'];	
 		if(get_magic_quotes_gpc()) { 
 			$message = stripslashes($message); 
 		}

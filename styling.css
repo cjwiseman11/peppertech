@@ -4,7 +4,6 @@ html {
 }
 
 body {
-  display: inline-block;
   font-family: 'Quicksand', sans-serif;
   margin: 0;
   color: #f0eef3;
@@ -319,7 +318,7 @@ nav li a {
   cursor: pointer;
 }
 
-.button:hover {
+.button:hover, .button:focus {
   background: #ee5e07;
   color: #000;
 }

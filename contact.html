@@ -33,19 +33,43 @@
           <p>I'd love to hear from you, whether it's feedback, an enquiry on work or if you wanted to work with me.</p>
           <p>I will usually get back to you within a few hours.</p>
         </div>
-        <form action="submit.php" method="post">
+        <form id="contact" name="contact" enctype="multipart/form-data" onsubmit="event.preventDefault();sendForm();">
           <label for="name">Name:</label>
-          <input type="text" name="name" placeholder="Your name" required />
+          <input id="name" type="text" name="name" placeholder="Your name" required />
           <label for="email">Email:</label>
-          <input type="text" name="email" placeholder="Your email" required />
+          <input id="email" type="email" name="email" placeholder="Your email" required />
           <label for="message">Message:</label>
-          <textarea name="message" rows="11" placeholder="Your message..." required></textarea>
+          <textarea id="message" name="message" rows="11" placeholder="Your message..." required></textarea>
+          <p style="display: none;">Error, please try again later or email directly at chris@peppertech.co.uk</p>
           <button type="submit" class="button">Send</button>
         </form>
       </section>
     </div>
+    <link href="styling.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+      function sendForm(data) {
+        var form = document.getElementById('contact');
+        var xhr = new XMLHttpRequest();
+        var formData = new FormData(form);
+
+        xhr.addEventListener('load', function(event) {
+          if(event.target.response === "Success"){
+            form.remove();
+          } else {
+            console.log('Fail');
+          }
+        });
+
+        xhr.addEventListener('error', function(event) {
+          // Error logic
+        });
+
+        xhr.open('POST', 'submit.php');
+
+        xhr.send(formData);
+      }
+    </script>
   </body>
-  <link href="styling.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </html>
