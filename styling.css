@@ -1,21 +1,39 @@
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   display: block;
   font-family: 'Quicksand', sans-serif;
   margin: 0;
-  background: #060301;
+  color: #f0eef3;
+}
+
+body a {
+  color: #ee5e07;
+}
+
+body a:hover, body a:focus {
   color: #f0eef3;
 }
 
 .content {
-  max-width: 1920px;
-  margin: 0 11%;
+  width: calc(100% - 240px);
+  max-width: 1400px;
+  margin: 0 auto;
+  
 }
 
 .intro {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: calc(100vh - 31px);
+  height: 100vh;
+}
+
+.heading {
+  margin-top:42px;
 }
 
 .heading h1 {
@@ -28,55 +46,60 @@ body {
   margin: 0;
 }
 
-@media screen and (max-width: 750px) {
+.not-intro .heading {
+  margin: 111px 0;
+}
+
+.subtitle {
+  color: #ee5e07;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 980px) {
   .heading h1 {
-    font-size: 36px;
+    font-size: 40px;
   }
   .heading p {
     font-size: 22px;
   }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (max-width: 750px) {
   .heading h1 {
-    font-size: 80px;
+    font-size: 30px;
+  }
+  .heading p {
+    font-size: 22px;
+  }
+  .content {
+    width: calc(100% - 200px);
+  }
+  .animation-container {
+    font-size: 0.8em;
   }
 }
 
-.subtitle {
-  color: #ee5e07;
+@media screen and (max-width: 580px) {
+  .subtitle {
+    white-space: normal;
+  }
 }
 
-.nav {
-  height: 31px;
+@media screen and (max-width: 430px) {
+  .content {
+    width: calc(100% - 111px);
+  }
 }
 
-.nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  max-width: 350px;
-  margin: 0;
-  font-weight: 700;
-  padding: 11px 0 0 0;
-}
-
-.nav ul li {
-  display: inline-block;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav a:hover {
-  border-bottom: 2px #ee5e07 solid;
+@media screen and (min-width: 1920px) {
+  .heading h1 {
+    font-size: 75px;
+  }
 }
 
 .copy {
   border-left: 3px solid #ee5e07;
   padding-left: 11px;
-  overflow: hidden;
 }
 
 .slideIn {
@@ -86,12 +109,12 @@ body {
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   animation-delay: 1.2s;
-  transform: translate(-104%);
+  transform: translate(-106%);
 }
 
 @keyframes slideIn {
   from {
-    transform: translate(-104%);
+    transform: translate(-107%);
   }
   to {
     transform: translate(0);
@@ -106,6 +129,7 @@ body {
   animation-fill-mode: forwards;
   animation-delay: 0.8s;
   transform: scaleY(0);
+  overflow: hidden;
 }
 
 @keyframes openEqually {
@@ -134,6 +158,79 @@ body {
   }
 }
 
+/* Nav */
+.nav {
+  position: fixed;
+  width: 120px;
+  top: 0;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.nav ul li {
+  display: inline-block;
+  margin: 11px 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  padding-left: 5px;
+  border-left: 2px #060301 solid;
+  background: none;
+}
+
+.animation-container {
+  overflow: hidden;
+  padding-left: 5px;
+}
+
+li a {
+  display: flex;
+  align-items: center;
+  max-height: 1em;
+}
+
+li p {
+  visibility: hidden;
+}
+
+li i {
+  padding-right: 5px;
+}
+
+@media screen and (min-width: 431px) {
+
+  li:hover i {
+    border-right: 2px #ee5e07 solid;
+  }
+
+  li:hover p {
+    animation-name: fromLeft;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    visibility: visible;
+  }
+
+  @keyframes fromLeft {
+  from {
+      margin-left: -100%;
+    }
+    to {
+      margin-left: 0;
+    }
+  }
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -143,40 +240,162 @@ body {
   margin-bottom: 10px;
 }
 
+/* <nav> nav */
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* background: linear-gradient(-184deg, rgb(20, 57, 113) 0%, #06030100 11% ); */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 11px 0;
+}
+
+nav li {
+  padding: 2px 0 2px 6px;
+}
+
+nav li+li {
+  margin-left: 11px;
+}
+
+nav li:hover {
+  border-left: 2px solid #ee5e07;
+  padding-left: 4px;
+}
+
+nav li a {
+  background: none;
+  color: #f0eef3;
+  text-decoration: none;
+}
+
 
 /* Portfolio */
 
-.portfolio-item {
-  display: flex;
-  align-items: center;
-}
-
-.portfolio-content {
-  width: 33.3%;
+.portfolio .container {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  border-left: 3px solid #ee5e07;
+  overflow: auto; /* IE fix */
 }
 
-.portfolio-item img {
+@media screen and (min-width: 751px) {
+  .portfolio-items .container + .container {
+    margin-left: 111px;
+  }
+  .portfolio .portfolio-items {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .portfolio-items .container + .container {
+    margin-top: 111px;
+  }
+}
+
+.portfolio .container h3 {
+  border-left: 2px solid #ee5e07;
+  margin-bottom: 11px;
+  margin: 0 0 22px 0;
+  padding: 0 0 0 11px;
+}
+
+.portfolio .container img {
+  height: auto;
   width: 100%;
-  max-width: 600px;
+  border-radius: 11px;
+  flex-shrink: 0; /* IE fix */;
 }
 
-.portfolio-item .button {
-  border: 1px #ee5e07 solid;
+.portfolio p {
+  flex-grow: 1;
+}
+
+.button {
+  background: none;
+  display: block;
+  border: 2px #ee5e07 solid;
   color: #fbf9ff;
   border-radius: 11px;
   font-weight: 700;
   padding: 11px;
   text-align: center;
   text-decoration: none;
-  margin-top: 11px;
+  margin: 11px 0;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.portfolio-item .button:hover {
-  border: 1px #219ab9 solid;
+.button:hover, .button:focus {
+  background: #ee5e07;
+  color: #000;
+}
+
+.not-intro .heading {
+  border-left: 2px solid #ee5e07;
+  padding-left: 11px;
+}
+
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea {
+  border: none;
+  margin-top: 1em;
+  padding: 11px;
+  border-radius: 0px 22px 0px 0;
+  overflow: auto;
+}
+
+form label {
+  border-left: 2px solid #ed5e07;
+  padding-left: 11px;
+}
+
+input + label {
+  margin-top: 22px;
+}
+
+input:disabled, textarea:disabled, #email:disabled {
   background: #060301;
-  color: #fbf9ff;
+  color: #f0eef3;
+}
+
+/* Annoyingly we have to override Chrome styles */
+input:-webkit-autofill:disabled, 
+textarea:-webkit-autofill:disabled,
+input:-internal-autofill-selected {
+  background: #060301!important;
+  color: #f0eef3!important;
+}
+
+@media screen and (min-width: 751px) {
+  form {
+    width: 50%;
+    margin-right: 111px;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  .contact .purply {
+    width: 50%;
+  }
+}
+
+.purply {
+  padding: 11px;
+  box-shadow: 0 0 77px 0 #5f07ee;
+  margin-bottom: 77px;
 }

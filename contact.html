@@ -1,38 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
     <meta name="description" content="Portfolio by Chris Wiseman. Fullstack JavaScript Developer">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Peppertech Portfolio</title>
     <style>
-      body {
+      body, body a {
         background: #060301;
+        color: #060301;
+        width: 100%;
+      }
+      img {
+        width: 0%;
       }
     </style>
   </head>
-  <body class="index">
-    <div class="nav flickerIn">
-      <ul class="content">
+  <body>
+    <nav>
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+    </nav>
+    <div class="content not-intro">
+      <section class="heading">
+        <h1>Peppertech <span class="subtitle">Contact</span></h1>
+      </section>
+      <section class="contact">
+        <div class="purply">
+          <p>I'd love to hear from you, whether it's feedback, an enquiry on work or if you wanted to work with me.</p>
+          <p>I will usually get back to you within a few hours.</p>
+        </div>
+        <form id="contact" name="contact" enctype="multipart/form-data" onsubmit="event.preventDefault();sendForm();" autocomplete="new-password">
+          <label for="name">Name:</label>
+          <input id="name" class="form-input" type="text" name="name" placeholder="Your name" required />
+          <label for="email">Email:</label>
+          <input id="email" class="form-input" type="email" name="email" placeholder="Your email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" class="form-input" name="message" rows="11" placeholder="Your message..." required></textarea>
+          <p id="form-message" style="display: none;"></p>
+          <button id="form-button" type="submit" class="button">Send</button>
+        </form>
+      </section>
     </div>
-    <section class="heading flickerIn">
-      <div class="content">
-          <h1>Peppertech <span class="subtitle">Portfolio by Chris Wiseman</span></h1>
-          <p>Fullstack JavaScript Web Developer</p>
-      </div>
-    </section>
-    <section class="copy content openEqually">
-      <div class="slideIn">
-        <p>Welcome to my portfolio. I am a Fullstack Web Developer from the UK</p>
-        <p>My main focus currently is Web Development in React, NodeJS and MongoDB</p>
-        <p>I also provide other services including Web Hosting and consultancy for Accessibility and SEO</p>
-      </div>
-    </section>
+    <link href="styling.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script>
+      var form = document.getElementById('contact');
+      var xhr = new XMLHttpRequest();
+      var successMessage = 'Message sent. I will email you back soon.';
+      var failMessage = 'Error! Please try again later or email me directly at <a href="mailto:chris@peppertech.co.uk">chris@peppertech.co.uk</a>';
+      var message = document.getElementById('form-message');
+      message.style.display = 'none';
+
+      function sendForm() {
+        xhr.addEventListener('load', function(event) {
+          if(event.target.response === "Success"){
+            var forminput = document.getElementsByClassName('form-input');
+            
+            for(var i=0; i < forminput.length; i++) {
+              forminput[i].disabled = true;
+            }
+            document.getElementById('form-button').remove();
+            document.getElementById('message').style.resize = 'none';
+            message.innerHTML = successMessage;
+            message.style.display = 'block';
+          } else {
+            message.innerHTML = failMessage;
+            message.style.display = 'block';
+          }
+        });
+
+        xhr.addEventListener('error', function(event) {
+          message.innerHTML = failMessage;
+          message.style.display = 'block';
+        });
+
+        xhr.open('POST', 'submit.php');
+
+        var formData = new FormData(form);
+        xhr.send(formData);
+      }
+    </script>
   </body>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
-  <link href="styling.css" rel="stylesheet" />
 </html>
