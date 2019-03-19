@@ -33,15 +33,15 @@
           <p>I'd love to hear from you, whether it's feedback, an enquiry on work or if you wanted to work with me.</p>
           <p>I will usually get back to you within a few hours.</p>
         </div>
-        <form id="contact" name="contact" enctype="multipart/form-data" onsubmit="event.preventDefault();sendForm();">
+        <form id="contact" name="contact" enctype="multipart/form-data" onsubmit="event.preventDefault();sendForm();" autocomplete="new-password">
           <label for="name">Name:</label>
-          <input id="name" type="text" name="name" placeholder="Your name" required />
+          <input id="name" class="form-input" type="text" name="name" placeholder="Your name" required />
           <label for="email">Email:</label>
-          <input id="email" type="email" name="email" placeholder="Your email" required />
+          <input id="email" class="form-input" type="email" name="email" placeholder="Your email" required />
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="11" placeholder="Your message..." required></textarea>
-          <p style="display: none;">Error, please try again later or email directly at chris@peppertech.co.uk</p>
-          <button type="submit" class="button">Send</button>
+          <textarea id="message" class="form-input" name="message" rows="11" placeholder="Your message..." required></textarea>
+          <p id="form-message" style="display: none;"></p>
+          <button id="form-button" type="submit" class="button">Send</button>
         </form>
       </section>
     </div>
@@ -49,25 +49,39 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script>
-      function sendForm(data) {
-        var form = document.getElementById('contact');
-        var xhr = new XMLHttpRequest();
-        var formData = new FormData(form);
+      var form = document.getElementById('contact');
+      var xhr = new XMLHttpRequest();
+      var successMessage = 'Message sent. I will email you back soon.';
+      var failMessage = 'Error! Please try again later or email me directly at <a href="mailto:chris@peppertech.co.uk">chris@peppertech.co.uk</a>';
+      var message = document.getElementById('form-message');
+      message.style.display = 'none';
 
+      function sendForm() {
         xhr.addEventListener('load', function(event) {
           if(event.target.response === "Success"){
-            form.remove();
+            var forminput = document.getElementsByClassName('form-input');
+            
+            for(var i=0; i < forminput.length; i++) {
+              forminput[i].disabled = true;
+            }
+            document.getElementById('form-button').remove();
+            document.getElementById('message').style.resize = 'none';
+            message.innerHTML = successMessage;
+            message.style.display = 'block';
           } else {
-            console.log('Fail');
+            message.innerHTML = failMessage;
+            message.style.display = 'block';
           }
         });
 
         xhr.addEventListener('error', function(event) {
-          // Error logic
+          message.innerHTML = failMessage;
+          message.style.display = 'block';
         });
 
         xhr.open('POST', 'submit.php');
 
+        var formData = new FormData(form);
         xhr.send(formData);
       }
     </script>
