@@ -17,7 +17,7 @@
     </style>
   </head>
   <body>
-    <nav>
+    <nav class="fadeIn">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -25,13 +25,15 @@
       </ul>
     </nav>
     <div class="content contact">
-      <div class="intro">
+      <div class="intro fadeIn">
         <section class="heading">
           <h1>Peppertech <span class="subtitle">Contact</span></h1>
         </section>
-        <div class="copy">
-          <p>I'd love to hear from you, whether it's feedback, an enquiry on work or if you wanted to work with me.</p>
-          <p>I will usually get back to you within a few hours.</p>
+        <div class="copy openEqually">
+          <div class="slideIn">
+            <p>I'd love to hear from you, whether it's feedback, an enquiry on work or if you wanted to work with me.</p>
+            <p>I will usually get back to you within a few hours.</p>
+          </div>
         </div>
       </div>
       <form id="contact" name="contact" class="purply" enctype="multipart/form-data" onsubmit="event.preventDefault();sendForm();" autocomplete="new-password">

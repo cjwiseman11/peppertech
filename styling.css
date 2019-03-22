@@ -146,49 +146,6 @@ body a:hover, body a:focus {
   }
 }
 
-/* Nav */
-.nav {
-  position: fixed;
-  width: 120px;
-  top: 0;
-}
-
-.nav ul {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
-}
-
-.nav ul li {
-  display: inline-block;
-  margin: 11px 0;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  padding-left: 5px;
-  border-left: 2px #060301 solid;
-  background: none;
-}
-
-li a {
-  display: flex;
-  align-items: center;
-  max-height: 1em;
-}
-
-li p {
-  visibility: hidden;
-}
-
-li i {
-  padding-right: 5px;
-}
-
 @media screen and (min-width: 431px) {
 
   li:hover i {
@@ -228,6 +185,7 @@ nav {
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 11;
 }
 
 nav ul {
@@ -368,4 +326,26 @@ input:-internal-autofill-selected {
   box-shadow: 0 -11px 55px 0 #5f07ee;
   margin-bottom: 111px;
   border-radius: 11px;
+}
+
+.purply {
+  animation-name: blurIn;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  visibility: visible;
+  filter: blur(50px);
+  opacity: 0;
+}
+
+@keyframes blurIn {
+from {
+  filter: blur(50px);
+  opacity: 0;
+  }
+to {
+  filter: blur(0px);
+  opacity: 1
+  }
 }
