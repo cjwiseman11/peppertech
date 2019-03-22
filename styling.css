@@ -22,7 +22,6 @@ body a:hover, body a:focus {
   width: calc(100% - 240px);
   max-width: 1400px;
   margin: 0 auto;
-  
 }
 
 .intro {
@@ -32,22 +31,14 @@ body a:hover, body a:focus {
   height: 100vh;
 }
 
-.heading {
-  margin-top:42px;
-}
-
 .heading h1 {
-  font-size: 4vw;
+  font-size: 3.2vw;
   margin: 0;
 }
 
 .heading p {
   font-size: 2vw;
   margin: 0;
-}
-
-.not-intro .heading {
-  margin: 111px 0;
 }
 
 .subtitle {
@@ -73,9 +64,6 @@ body a:hover, body a:focus {
   }
   .content {
     width: calc(100% - 200px);
-  }
-  .animation-container {
-    font-size: 0.8em;
   }
 }
 
@@ -187,11 +175,6 @@ body a:hover, body a:focus {
   background: none;
 }
 
-.animation-container {
-  overflow: hidden;
-  padding-left: 5px;
-}
-
 li a {
   display: flex;
   align-items: center;
@@ -245,7 +228,6 @@ nav {
   position: absolute;
   top: 0;
   width: 100%;
-  /* background: linear-gradient(-184deg, rgb(20, 57, 113) 0%, #06030100 11% ); */
 }
 
 nav ul {
@@ -276,13 +258,21 @@ nav li a {
 
 /* Portfolio */
 
+.portfolio h2 {
+  margin: 0 0 111px 0;
+}
+
 .portfolio .container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 111px;
   overflow: auto; /* IE fix */
 }
 
 @media screen and (min-width: 751px) {
+  .portfolio .container {
+    width: 50%;
+  }
   .portfolio-items .container + .container {
     margin-left: 111px;
   }
@@ -291,17 +281,9 @@ nav li a {
   }
 }
 
-@media screen and (max-width: 750px) {
-  .portfolio-items .container + .container {
-    margin-top: 111px;
-  }
-}
-
 .portfolio .container h3 {
-  border-left: 2px solid #ee5e07;
   margin-bottom: 11px;
   margin: 0 0 22px 0;
-  padding: 0 0 0 11px;
 }
 
 .portfolio .container img {
@@ -335,11 +317,6 @@ nav li a {
   color: #000;
 }
 
-.not-intro .heading {
-  border-left: 2px solid #ee5e07;
-  padding-left: 11px;
-}
-
 /* Contact */
 form {
   display: flex;
@@ -352,11 +329,6 @@ form input, form textarea {
   padding: 11px;
   border-radius: 0px 22px 0px 0;
   overflow: auto;
-}
-
-form label {
-  border-left: 2px solid #ed5e07;
-  padding-left: 11px;
 }
 
 input + label {
@@ -377,25 +349,23 @@ input:-internal-autofill-selected {
 }
 
 @media screen and (min-width: 751px) {
-  form {
-    width: 50%;
-    margin-right: 111px;
-  }
-
   .contact {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: row-reverse;
+    align-items: baseline;
   }
 
-  .contact .purply {
+  .contact > div {
     width: 50%;
+  }
+  .contact > form {
+    width: 50%;
+    margin-left: 111px;
   }
 }
 
 .purply {
-  padding: 11px;
-  box-shadow: 0 0 77px 0 #5f07ee;
-  margin-bottom: 77px;
+  padding: 22px;
+  box-shadow: 0 -11px 55px 0 #5f07ee;
+  margin-bottom: 111px;
+  border-radius: 11px;
 }
