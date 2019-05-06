@@ -1,0 +1,8 @@
+{
+  "short_name": "Peppertech",
+  "name": "Peppertech Portfolio",
+  "start_url": "/",
+  "background_color": "#e05a47",
+  "theme_color": "#e05a47",
+  "display": "standalone"
+}

@@ -75,7 +75,7 @@ body a:hover, body a:focus {
 
 @media screen and (max-width: 430px) {
   .content {
-    width: calc(100% - 111px);
+    width: calc(100% - 66px);
   }
 }
 
@@ -170,6 +170,7 @@ nav ul {
   display: flex;
   list-style: none;
   margin: 11px 0;
+  padding-left: 11px;
 }
 
 nav li {
@@ -301,7 +302,7 @@ input:-internal-autofill-selected {
 
 .purply {
   padding: 22px;
-  box-shadow: 0 -11px 55px 0 #5f07ee;
+  box-shadow: 0 -11px 44px -11px #5f07ee;
   margin-bottom: 111px;
   border-radius: 11px;
 }

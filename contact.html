@@ -94,6 +94,9 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-60093553-1');
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/serviceWorker.js')
+        }
     </script>
     <!-- end analytics-->
   </body>
