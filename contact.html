@@ -17,33 +17,36 @@
     </style>
   </head>
   <body>
-    <nav>
+    <nav class="fadeIn">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <div class="content not-intro">
-      <section class="heading">
-        <h1>Peppertech <span class="subtitle">Contact</span></h1>
-      </section>
-      <section class="contact">
-        <div class="purply">
-          <p>I'd love to hear from you, whether it's feedback, an enquiry on work or if you wanted to work with me.</p>
-          <p>I will usually get back to you within a few hours.</p>
+    <div class="content contact">
+      <div class="intro fadeIn">
+        <section class="heading">
+          <h1>Peppertech <span class="subtitle">Contact</span></h1>
+        </section>
+        <div class="copy openEqually">
+          <div class="slideIn">
+            <p>I'd love to hear from you, whether it's feedback, an enquiry on work or if you wanted to work with me.</p>
+            <p>I will usually get back to you within a few hours.</p>
+            <p>Registered with Companies House: PEPPERTECHUK LTD, 12191874, UK</p>
+          </div>
         </div>
-        <form id="contact" name="contact" enctype="multipart/form-data" onsubmit="event.preventDefault();sendForm();" autocomplete="new-password">
-          <label for="name">Name:</label>
-          <input id="name" class="form-input" type="text" name="name" placeholder="Your name" required />
-          <label for="email">Email:</label>
-          <input id="email" class="form-input" type="email" name="email" placeholder="Your email" required />
-          <label for="message">Message:</label>
-          <textarea id="message" class="form-input" name="message" rows="11" placeholder="Your message..." required></textarea>
-          <p id="form-message" style="display: none;"></p>
-          <button id="form-button" type="submit" class="button">Send</button>
-        </form>
-      </section>
+      </div>
+      <form id="contact" name="contact" class="purply" enctype="multipart/form-data" onsubmit="event.preventDefault();sendForm();" autocomplete="new-password">
+        <label for="name">Name:</label>
+        <input id="name" class="form-input" type="text" name="name" placeholder="Your name" required />
+        <label for="email">Email:</label>
+        <input id="email" class="form-input" type="email" name="email" placeholder="Your email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" class="form-input" name="message" rows="11" placeholder="Your message..." required></textarea>
+        <p id="form-message" style="display: none;"></p>
+        <button id="form-button" type="submit" class="button">Send</button>
+      </form>
     </div>
     <link href="styling.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
@@ -85,5 +88,17 @@
         xhr.send(formData);
       }
     </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60093553-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-60093553-1');
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/serviceWorker.js')
+        }
+    </script>
+    <!-- end analytics-->
   </body>
 </html>
