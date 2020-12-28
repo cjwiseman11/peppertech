@@ -1,0 +1,39 @@
+/* Portfolio */
+
+.portfolio h2 {
+  margin: 0 0 111px 0;
+}
+
+.portfolio .container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 111px;
+  overflow: auto; /* IE fix */
+}
+
+@media screen and (min-width: 980px) {
+  .portfolio .container {
+    width: 45%;
+  }
+  .portfolio .portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+.portfolio .container h3 {
+  margin-bottom: 11px;
+  margin: 0 0 22px 0;
+}
+
+.portfolio .container img {
+  height: auto;
+  width: 100%;
+  border-radius: 11px;
+  flex-shrink: 0; /* IE fix */
+}
+
+.portfolio p {
+  flex-grow: 1;
+}

@@ -84,11 +84,12 @@
           placeholder="Your message..."
           required
         ></textarea>
-        <p id="form-message" style="display: none;"></p>
+        <p id="form-message" style="display: none"></p>
         <button id="form-button" type="submit" class="button">Send</button>
       </form>
     </div>
-    <link href="styling.css" rel="stylesheet" />
+    <link href="global.css" rel="stylesheet" defer />
+    <link href="contact.css" rel="stylesheet" defer />
     <link
       href="https://fonts.googleapis.com/css?family=Quicksand"
       rel="stylesheet"
@@ -98,12 +99,12 @@
       rel="stylesheet"
     />
     <script>
-      var form = document.getElementById('contact');
-      var xhr = new XMLHttpRequest();
-      var successMessage = 'Message sent. I will email you back soon.';
-      var failMessage =
+      const form = document.getElementById('contact');
+      const xhr = new XMLHttpRequest();
+      const successMessage = 'Message sent. I will email you back soon.';
+      const failMessage =
         'Error! Please try again later or email me directly at <a href="mailto:chris@peppertech.co.uk">chris@peppertech.co.uk</a>';
-      var message = document.getElementById('form-message');
+      const message = document.getElementById('form-message');
       message.style.display = 'none';
 
       function sendForm() {
