@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <nav class="fadeIn">
+    <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -28,16 +28,18 @@
       </ul>
     </nav>
     <div class="content intro">
-      <section class="heading fadeIn">
+      <section class="heading">
         <h1>
           Peppertech
           <span class="subtitle">Portfolio by Chris Wiseman</span>
         </h1>
         <p>Web Development</p>
       </section>
-      <section class="copy openEqually">
-        <div class="slideIn">
-          <p>Welcome to my portfolio. I am a Web Developer from the UK</p>
+      <section class="copy">
+        <div class>
+          <p>
+            Welcome to my portfolio. I am a Web Developer from the UK
+          </p>
           <p>
             Currently, my main focus is Web Development in React, NodeJS and
             MySQL.
@@ -65,9 +67,6 @@
       }
       gtag('js', new Date());
       gtag('config', 'UA-60093553-1');
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/serviceWorker.js');
-      }
     </script>
     <!-- end analytics-->
   </body>
