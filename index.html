@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <nav class="fadeIn">
+    <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -28,15 +28,15 @@
       </ul>
     </nav>
     <div class="content intro">
-      <section class="heading fadeIn">
+      <section class="heading">
         <h1>
           Peppertech
           <span class="subtitle">Portfolio by Chris Wiseman</span>
         </h1>
         <p>Web Development</p>
       </section>
-      <section class="copy openEqually">
-        <div class="slideIn">
+      <section class="copy">
+        <div class>
           <p>
             Welcome to my portfolio. I am a Web Developer from the UK
           </p>
@@ -50,11 +50,9 @@
         </div>
       </section>
     </div>
-    <link href="styling.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand"
-      rel="stylesheet"
-    />
+    <link href="global.css" rel="stylesheet" defer />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -67,9 +65,6 @@
       }
       gtag('js', new Date());
       gtag('config', 'UA-60093553-1');
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/serviceWorker.js');
-      }
     </script>
     <!-- end analytics-->
   </body>

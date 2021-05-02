@@ -1,0 +1,48 @@
+/* Contact */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  border: none;
+  margin-top: 1em;
+  padding: 11px;
+  border-radius: 0px 22px 0px 0;
+  overflow: auto;
+}
+
+input + label {
+  margin-top: 22px;
+}
+
+input:disabled,
+textarea:disabled,
+#email:disabled {
+  background: #060301;
+  color: #f0eef3;
+}
+
+/* Annoyingly we have to override Chrome styles */
+input:-webkit-autofill:disabled,
+textarea:-webkit-autofill:disabled,
+input:-internal-autofill-selected {
+  background: #060301 !important;
+  color: #f0eef3 !important;
+}
+
+@media screen and (min-width: 980px) {
+  .contact {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .contact > div {
+    width: 50%;
+  }
+  .contact > form {
+    width: 50%;
+    margin-left: 111px;
+  }
+}

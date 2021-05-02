@@ -21,6 +21,9 @@
       img {
         width: 0%;
       }
+      form {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -32,12 +35,11 @@
       </ul>
     </nav>
     <div class="content contact">
-      <div class="intro fadeIn">
+      <div class="intro">
         <section class="heading">
           <h1>Peppertech <span class="subtitle">Contact</span></h1>
         </section>
-        <div class="copy openEqually">
-          <div class="slideIn">
+        <div class="copy">
             <p>
               I'd love to hear from you, whether it's feedback, an enquiry on
               work or if you wanted to work with me.
@@ -46,7 +48,6 @@
             <p>
               Registered with Companies House: PEPPERTECHUK LTD, 12191874, UK
             </p>
-          </div>
         </div>
       </div>
       <form
@@ -84,26 +85,21 @@
           placeholder="Your message..."
           required
         ></textarea>
-        <p id="form-message" style="display: none;"></p>
+        <p id="form-message" style="display: none"></p>
         <button id="form-button" type="submit" class="button">Send</button>
       </form>
     </div>
-    <link href="styling.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="global.css" rel="stylesheet" defer />
+    <link href="contact.css" rel="stylesheet" defer />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <script>
-      var form = document.getElementById('contact');
-      var xhr = new XMLHttpRequest();
-      var successMessage = 'Message sent. I will email you back soon.';
-      var failMessage =
+      const form = document.getElementById('contact');
+      const xhr = new XMLHttpRequest();
+      const successMessage = 'Message sent. I will email you back soon.';
+      const failMessage =
         'Error! Please try again later or email me directly at <a href="mailto:chris@peppertech.co.uk">chris@peppertech.co.uk</a>';
-      var message = document.getElementById('form-message');
+      const message = document.getElementById('form-message');
       message.style.display = 'none';
 
       function sendForm() {
